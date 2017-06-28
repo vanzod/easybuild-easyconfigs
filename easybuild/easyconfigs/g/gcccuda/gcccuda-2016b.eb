@@ -1,0 +1,21 @@
+easyblock = "Toolchain"
+
+name = 'gcccuda'
+version = '2016b'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain, along with CUDA toolkit."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+gcccorever = '5.4.0'
+binutilsver = '2.26'
+gccver = '%s-%s' % (gcccorever, binutilsver)
+
+# compiler toolchain dependencies
+dependencies = [
+    ('GCC', gccver),
+    ('CUDA', '8.0.61', '', ('GCCcore', gcccorever)),
+]
+
+moduleclass = 'toolchain'
