@@ -29,7 +29,7 @@ comp_mpi_tc = (comp_mpi_tc_name, version)
 dependencies = [
     ('GCC', gccver),
     ('CUDA', '8.0.61', '', ('GCCcore', gcccorever)),
-    ('OpenMPI', '1.10.3', '', ('GCC', gccver)),
+    ('OpenMPI', '1.10.3', '', ('gcccuda', version)),
     (blaslib, blasver, blassuff, ('GCC', gccver)),
     ('FFTW', '3.3.4', '', comp_mpi_tc),
     ('ScaLAPACK', '2.0.2', '-%s%s' % (blas, blassuff), comp_mpi_tc),
