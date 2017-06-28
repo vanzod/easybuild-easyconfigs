@@ -1,0 +1,23 @@
+easyblock = "Toolchain"
+
+name = 'gompic'
+version = '2016b'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain along with CUDA toolkit,
+ including OpenMPI for MPI support with CUDA features enabled."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+gcccorever = '5.4.0'
+binutilsver = '2.26'
+gccver = '%s-%s' % (gcccorever, binutilsver)
+
+# compiler toolchain dependencies
+dependencies = [
+    ('GCC', gccver),
+    ('CUDA', '8.0.61', '', ('GCCcore', gcccorever)),
+    ('OpenMPI', '1.10.3', '', ('gcccuda', version)),
+]
+
+moduleclass = 'toolchain'
