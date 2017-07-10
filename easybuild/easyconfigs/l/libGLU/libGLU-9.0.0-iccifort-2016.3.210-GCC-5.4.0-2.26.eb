@@ -1,0 +1,51 @@
+# Built with EasyBuild version 3.2.1 on 2017-05-20_10-39-23
+easyblock = 'ConfigureMake'
+
+name = 'libGLU'
+version = '9.0.0'
+
+homepage = 'ftp://ftp.freedesktop.org/pub/mesa/glu/'
+description = """The OpenGL Utility Library (GLU) is a computer graphics library for OpenGL. """
+
+toolchain = {'name': 'iccifort', 'version': '2016.3.210-GCC-5.4.0-2.26'}
+toolchainopts = {'pic': True}
+
+source_urls = ['ftp://ftp.freedesktop.org/pub/mesa/glu/']
+sources = ['glu-%(version)s.tar.bz2']
+
+dependencies = [
+    ('Mesa', '12.0.2'),
+]
+
+sanity_check_paths = {
+    'files': ['lib/libGLU.so.1'],
+    'dirs': [],
+}
+
+moduleclass = 'vis'
+
+# Build statistics
+buildstats = [{
+    "build_time": 115.8,
+    "command_line": ["--buildpath='/tmp'", "--color='always'", '--consider-archived-easyconfigs', '--group-writable-installdir', '--hidden', "--hide-deps='M4,Bison,flex,zlib,binutils,GCCcore,gompi,numactl,hwloc,ncurses,libreadline,libffi,OpenSSL,libtool,Autoconf,Automake,Autotools,GMP,bzip2,Szip,Doxygen,cURL,Tk,XZ,gettext,PCRE,libpng,LibTIFF,NASM,libjpeg-turbo,libxml2,PROJ,expat,netCDF,pixman,freetype,fontconfig,pkg-config,X11,GLib,cairo,help2man,icc,ifort,intel,foss,libyaml,libedit,libevent,SCons,APR,APR-util,Serf,file,nettle,libdrm,Mako,Mesa,libGLU,Qt,libgd,libcerf,GObject-Introspection,HarfBuzz,Pango,JasPer,LittleCMS,Ghostscript,GEOS,freeglut,VTK,GLPK,xprop,Qt5,FLTK,GL2PS,gperf,util-linux,motif,xbitmaps,JUnit,ant,Yasm,x264,ATK,Gdk-Pixbuf,GTK+,CFITSIO,protobuf,protobuf-python,NLopt'", "--hide-toolchains='GCCcore,gompi,iimpi,intel,foss'", "--installpath='/opt/easybuild'", "--installpath-modules='/opt/easybuild/modules'", "--installpath-software='/opt/easybuild/software'", '--minimal-toolchains', "--module-naming-scheme='SwatHMNS'", "--packagepath='/opt/easybuild/packages'", "--repositorypath='/opt/easybuild/ebfiles_repo'", "--robot='/home/vanzod/EB/Qt/Intel:/opt/easybuild/ebfiles_repo:/opt/easybuild/software/Core/EasyBuild/3.2.1/lib/python2.7/site-packages/easybuild_easyconfigs-3.2.1-py2.7.egg/easybuild/easyconfigs'", "--robot-paths='/home/vanzod/EB/Qt/Intel:/opt/easybuild/ebfiles_repo:'", "--sourcepath='/opt/easybuild/sources'", "--umask='002'", '--update-modules-tool-cache', '--use-existing-modules', 'Qt-4.8.7-iccifort-2016.3.210-GCC-5.4.0-2.26.eb'],
+    "core_count": 16,
+    "cpu_model": "Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz",
+    "cpu_speed": 2266.741,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "3.2.1",
+    "easybuild-framework_version": "3.2.1",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/gpfs22/easybuild/centos6/software/Core/GCCcore/5.4.0/bin/../libexec/gcc/x86_64-unknown-linux-gnu/5.4.0/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --prefix=/opt/easybuild/software/Core/GCCcore/5.4.0 --with-local-prefix=/opt/easybuild/software/Core/GCCcore/5.4.0 --enable-bootstrap --with-isl=/tmp/GCCcore/5.4.0/dummy-/gcc-5.4.0/stage2_stuff; Thread model: posix; gcc version 5.4.0 (GCC) ; ",
+    "glibc_version": "2.12",
+    "hostname": "vmps50",
+    "install_size": 4240642,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '7.4.15'),
+    "os_name": "centos",
+    "os_type": "Linux",
+    "os_version": "6.8",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.6 (default, Jan 13 2014, 09:42:22) ; [GCC 4.6.1]",
+    "system_gcc_path": "/opt/easybuild/software/Core/GCCcore/5.4.0/bin/gcc",
+    "system_python_path": "/usr/local/bin/python",
+    "timestamp": 1495294763,
+    "total_memory": 24020,
+}]
