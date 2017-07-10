@@ -1,0 +1,53 @@
+# Built with EasyBuild version 3.2.1 on 2017-05-16_11-11-43
+easyblock = 'ConfigureMake'
+
+name = 'libdrm'
+version = '2.4.70'
+
+homepage = 'http://dri.freedesktop.org'
+description = """Direct Rendering Manager runtime library."""
+
+source_urls = ['http://dri.freedesktop.org/libdrm/']
+sources = [SOURCELOWER_TAR_GZ]
+
+toolchain = {'name': 'GCCcore', 'version': '5.4.0'}
+
+builddependencies = [('binutils', '2.26', '', True)]
+
+dependencies = [
+    ('X11', '20160819'),
+]
+
+sanity_check_paths = {
+    'files': ['include/xf86drm.h', 'include/xf86drmMode.h', 'lib/libdrm_intel.%s' % SHLIB_EXT,
+              'lib/libdrm_radeon.%s' % SHLIB_EXT, 'lib/libdrm.%s' % SHLIB_EXT, 'lib/libkms.%s' % SHLIB_EXT],
+    'dirs': ['include/libdrm', 'include/libkms', 'lib/pkgconfig'],
+}
+
+moduleclass = 'lib'
+
+# Build statistics
+buildstats = [{
+    "build_time": 29.16,
+    "command_line": ["--buildpath='/tmp'", "--color='always'", '--consider-archived-easyconfigs', '--group-writable-installdir', '--hidden', "--hide-deps='M4,Bison,flex,zlib,binutils,GCCcore,gompi,numactl,hwloc,ncurses,libreadline,libffi,OpenSSL,libtool,Autoconf,Automake,Autotools,GMP,bzip2,Szip,Doxygen,cURL,Tk,XZ,gettext,PCRE,libpng,LibTIFF,NASM,libjpeg-turbo,libxml2,PROJ,expat,GDAL,netCDF,pixman,freetype,fontconfig,pkg-config,X11,GLib,cairo,help2man,icc,ifort,intel,foss,libyaml,libedit,libevent,SCons,APR,APR-util,Serf,file,nettle,libdrm,Mako,Mesa,libGLU,Qt'", "--hide-toolchains='GCCcore,gompi,iimpi,intel,foss'", "--installpath='/opt/easybuild'", "--installpath-modules='/opt/easybuild/modules'", "--installpath-software='/opt/easybuild/software'", '--minimal-toolchains', "--module-naming-scheme='SwatHMNS'", "--packagepath='/opt/easybuild/packages'", "--repositorypath='/opt/easybuild/ebfiles_repo'", "--robot='/home/vanzod/EB/Qt:/opt/easybuild/ebfiles_repo:/opt/easybuild/software/Core/EasyBuild/3.2.1/lib/python2.7/site-packages/easybuild_easyconfigs-3.2.1-py2.7.egg/easybuild/easyconfigs'", "--robot-paths='/home/vanzod/EB/Qt:/opt/easybuild/ebfiles_repo:'", "--sourcepath='/opt/easybuild/sources'", "--umask='002'", '--update-modules-tool-cache', '--use-existing-modules', 'Qt-4.8.7-GCC-5.4.0-2.27.eb'],
+    "core_count": 16,
+    "cpu_model": "Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz",
+    "cpu_speed": 2266.741,
+    "cpu_vendor": "Intel",
+    "easybuild-easyblocks_version": "3.2.1",
+    "easybuild-framework_version": "3.2.1",
+    "gcc_version": "Using built-in specs.; COLLECT_GCC=gcc; COLLECT_LTO_WRAPPER=/gpfs22/easybuild/centos6/software/Core/GCCcore/5.4.0/bin/../libexec/gcc/x86_64-unknown-linux-gnu/5.4.0/lto-wrapper; Target: x86_64-unknown-linux-gnu; Configured with: ../configure --enable-languages=c,c++,fortran --enable-lto --enable-checking=release --disable-multilib --enable-shared=yes --enable-static=yes --enable-threads=posix --enable-gold=default --enable-plugins --enable-ld --with-plugin-ld=ld.gold --prefix=/opt/easybuild/software/Core/GCCcore/5.4.0 --with-local-prefix=/opt/easybuild/software/Core/GCCcore/5.4.0 --enable-bootstrap --with-isl=/tmp/GCCcore/5.4.0/dummy-/gcc-5.4.0/stage2_stuff; Thread model: posix; gcc version 5.4.0 (GCC) ; ",
+    "glibc_version": "2.12",
+    "hostname": "vmps50",
+    "install_size": 1526690,
+    "modules_tool": ('Lmod', '/usr/share/lmod/lmod/libexec/lmod', '7.4.11'),
+    "os_name": "centos",
+    "os_type": "Linux",
+    "os_version": "6.8",
+    "platform_name": "x86_64-unknown-linux",
+    "python_version": "2.7.6 (default, Jan 13 2014, 09:42:22) ; [GCC 4.6.1]",
+    "system_gcc_path": "/opt/easybuild/software/Core/GCCcore/5.4.0/bin/gcc",
+    "system_python_path": "/usr/local/bin/python",
+    "timestamp": 1494951103,
+    "total_memory": 24020,
+}]
