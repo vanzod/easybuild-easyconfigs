@@ -27,7 +27,7 @@ dependencies = [
     ('freeglut', '3.0.0'),
     ('expat', '2.2.0'),
     ('zlib', '1.2.8'),
-    ('VTK', '6.3.0', '-Python-2.7.12'),
+    ('VTK', '6.3.0', '-Python-2.7.12-bare'),
     ('Qwt', '6.1.3')
 ]
 
